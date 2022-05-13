@@ -18,6 +18,6 @@ with st.expander("Profit Margin"):
     total_biaya_usaha = st.number_input('Total Biaya Usaha')
     if st.button('Hitung '):
         profit_margin = round((penjualan_kotor - total_biaya_usaha)/ penjualan_kotor,2)
-        st.write('Dari setiap 1 rupiah penjualan kotor anda, anda mendapatkan keuntungan sebesar '+ str(profit_margin) + ' rupiah. Dengan kata lain, jika anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah '+ profit_margin*100000 + ' rupiah. Jika anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan anda atau menurunkan biaya usaha anda.')
+        st.write('Dari setiap 1 rupiah penjualan kotor anda, anda mendapatkan keuntungan sebesar '+ str(profit_margin) + ' rupiah. Dengan kata lain, jika anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah '+ str(profit_margin*100000) + ' rupiah. Jika anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan anda atau menurunkan biaya usaha anda.')
 
      
