@@ -1,7 +1,8 @@
 import streamlit as st
 
-<<<<<<< HEAD
-st.write('rasio-keuangan')
-=======
-st.write('rasio-keuangan')
->>>>>>> 0944c0d5c7cbf8f9ec730456a14066a5a29f09c4
+st.write('<b>Rasio Keuangan</b>')
+st.write('Setiap wirausahawan perlu mengetahui rasio keuangan yang bisa membantu mereka dalam mengelola bisnis. Aplikasi ini akan membantu anda menghitung dan menjelaskan rasio keuangan berikut untuk mengelola bisnis anda agar semakin maju:')
+
+
+with st.expander("Breakeven"):
+    st.write('Breakeven (titik impas) adalah jumlah barang/jasa yang harus Anda jual sebelum Anda bisa mendapatkan keuntungan.')
