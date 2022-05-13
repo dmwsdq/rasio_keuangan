@@ -12,10 +12,12 @@ with st.expander("Breakeven"):
         breakeven = total_biaya_per_hari / harga_barang_per_satuan
         st.write('Jumlah barang yang harus anda jual tiap hari sebelum anda bisa untung adalah'+breakeven+'buah. Jika anda sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung.')
 
-with st.expander("Profit Margin"):
+'''with st.expander("Profit Margin"):
     st.write('Breakeven (titik impas) adalah jumlah barang/jasa yang harus Anda jual sebelum Anda bisa mendapatkan keuntungan.')
     total_biaya_per_hari = st.number_input('Total biaya per hari')
     harga_barang_per_satuan = st.number_input('Harga barang per satuan')
     if st.button('Hitung'):
         breakeven = total_biaya_per_hari / harga_barang_per_satuan
         st.write('Jumlah barang yang harus anda jual tiap hari sebelum anda bisa untung adalah'+breakeven+'buah. Jika anda sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung.')
+
+        '''
