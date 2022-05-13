@@ -1,7 +1,6 @@
 import streamlit as st
 import math
-import locale
-locale.setlocale(locale.LC_ALL, 'id_ID')
+
 
 st.title('Rasio Keuangan')
 st.write('Setiap wirausahawan perlu mengetahui rasio keuangan yang bisa membantu mereka dalam mengelola bisnis. Aplikasi ini akan membantu anda menghitung dan menjelaskan rasio keuangan berikut untuk mengelola bisnis anda agar semakin maju:')
@@ -20,7 +19,7 @@ with st.expander("Profit Margin"):
     total_biaya_usaha = st.number_input('Total Biaya Usaha')
     if st.button('Hitung '):
         profit_margin = round((penjualan_kotor - total_biaya_usaha)/ penjualan_kotor,2)
-        st.write('Dari setiap 1 rupiah penjualan kotor anda, anda mendapatkan keuntungan sebesar '+ locale.currency(profit_margin , grouping=True) + ' . Dengan kata lain, jika anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah '+  locale.currency(profit_margin*100000 , grouping=True) + '. Jika anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan anda atau menurunkan biaya usaha anda.')
+        st.write('Dari setiap 1 rupiah penjualan kotor anda, anda mendapatkan keuntungan sebesar '+ '{:0,.2f}'.format(profit_margin) + ' . Dengan kata lain, jika anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah '+  '{:0,.2f}'.format(profit_margin*100000) + '. Jika anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan anda atau menurunkan biaya usaha anda.')
 
 with st.expander("Sales Growth"):
     st.write('Pertumbuhan penjualan adalah rasio yang paling tepat untuk mengukur pertumbuhan usaha anda. Pertumbuhan penjualan bisa dihitung per minggu, per bulan, per tahun, atau sesuai kebutuhan anda.')
@@ -36,4 +35,4 @@ with st.expander("Burn Rate"):
     uang_akhir_tahun  = st.number_input('Uang untuk Modal Usaha di Akhir Tahun ')
     if st.button('Hitung   '):
         burn_rate = round((uang_awal_tahun - uang_akhir_tahun)/12,2) 
-        st.write('Tingkat pembakaran anda adalah Rp'+ locale.currency(burn_rate , grouping=True) + '/bulan. Dengan kata lain, tiap bulan anda menghabiskan uang untuk usaha anda sebanyak Rp'+ locale.currency(burn_rate , grouping=True) +'. Jika anda merasa tingkat pembakarannya terlalu besar, anda harus menekan biaya usaha anda.')   
+        st.write('Tingkat pembakaran anda adalah Rp'+ '{:0,.2f}'.format(burn_rate) + '/bulan. Dengan kata lain, tiap bulan anda menghabiskan uang untuk usaha anda sebanyak Rp'+ '{:0,.2f}'.format(burn_rate) +'. Jika anda merasa tingkat pembakarannya terlalu besar, anda harus menekan biaya usaha anda.')   
