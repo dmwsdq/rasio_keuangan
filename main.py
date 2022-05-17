@@ -2,6 +2,9 @@ from telnetlib import STATUS
 from click import option
 import streamlit as st
 import math
+import locale
+
+locale.setlocale(locale.LC_ALL, 'id')
 
 st.title("Aplikasi Ratio Keuangan")
 option = st.sidebar.selectbox ('Silahkan di pilih :',['Home', 'profitMargin', 'breakEven','salesGrowth', 'burnRate'])
@@ -65,7 +68,7 @@ if option == 'Home' or option == '': #Halaman Utama
             try:
                 hasilBreak = int (math.ceil( tb / hb))
                 st.success ("Break Even Anda adalah {}".format(hasilBreak))
-                st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah {}".format(hasilBreak) + " Buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
+                st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah {:n}".format(hasilBreak) + " buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
             except ZeroDivisionError :
                 st.error ('Sorry, ada yang salah dalam sistem')    
     elif (status == 'Sales_Growth') :
