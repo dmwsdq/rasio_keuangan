@@ -8,6 +8,11 @@ def id_fmt(val):
     char_to_replace = {',': '.','.': ','}
     return string_temp.translate(str.maketrans(char_to_replace))
 
+def int_fmt(val):
+    string_temp = "{:,}".format(val)
+    char_to_replace = {',': '.','.': ','}
+    return string_temp.translate(str.maketrans(char_to_replace))
+
 st.title("Aplikasi Ratio Keuangan")
 option = st.sidebar.selectbox ('Silahkan di pilih :',['Home', 'profitMargin', 'breakEven','salesGrowth', 'burnRate'])
 
@@ -69,8 +74,8 @@ if option == 'Home' or option == '': #Halaman Utama
         if st.button('Hitung Break Even') :
             try:
                 hasilBreak = int (math.ceil( tb / hb))
-                st.success ("Break Even Anda adalah {}".format(hasilBreak))
-                st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah {:n}".format(hasilBreak) + " buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
+                st.success ("Break Even Anda adalah "+int_fmt(hasilBreak))
+                st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah "+int_fmt(hasilBreak)+" buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
             except ZeroDivisionError :
                 st.error ('Sorry, ada yang salah dalam sistem')    
     elif (status == 'Sales_Growth') :
@@ -183,8 +188,8 @@ elif option == 'breakEven': #Break Even
     if st.button('Hitung Break Even') :
         try:
             hasilBreak = int(math.ceil( tb / hb))
-            st.success ("Break Even Anda adalah {}".format(hasilBreak))
-            st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah {}".format(hasilBreak) + " Buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
+            st.success ("Break Even Anda adalah "+int_fmt(hasilBreak))
+            st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah "+int_fmt(hasilBreak)+" buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
         except ZeroDivisionError :
             st.error ('Sorry, ada yang salah dalam sistem') 
 
