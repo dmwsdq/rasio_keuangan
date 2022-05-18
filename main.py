@@ -14,7 +14,7 @@ def int_fmt(val):
     return string_temp.translate(str.maketrans(char_to_replace))
 
 st.title("Aplikasi Rasio Keuangan")
-option = st.sidebar.selectbox ('Silahkan di pilih :',['Home', 'profitMargin', 'breakEven','salesGrowth', 'burnRate'])
+option = st.sidebar.selectbox ('Silahkan di pilih :',['Home', 'breakEven', 'profitMargin','salesGrowth', 'burnRate'])
 
 if option == 'Home' or option == '': #Halaman Utama
     st.subheader ("Home")
@@ -22,7 +22,7 @@ if option == 'Home' or option == '': #Halaman Utama
         Setiap Wirausahawan perlu mengetahui Rasio Keuangan yang bisa membantu mereka dalam mengelola bisnis.
         Aplikasi ini akan membantu anda menghitung dan menjelaskan rasio keuangan berikut untuk mengelola bisnis Anda agar semakin maju.
     ''')
-    status = st.radio ("Apa yang ingin Anda Ketahui : ",('Burn_Rate','Sales_Growth', 'Profit_Margin', 'Break_Even'))
+    status = st.radio ("Apa yang ingin Anda Ketahui : ",('Break_Even','Profit_Margin','Sales_Growth','Burn_Rate'  ))
     if (status == 'Profit_Margin') :
         st.subheader("Profit Margin (Margin Keuntungan)")
         st.write('''
