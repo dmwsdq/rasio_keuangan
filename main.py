@@ -40,8 +40,8 @@ if option == 'Home' or option == '': #Halaman Utama
             try:
                 hasilProfit = (pk-bu)/pk
                 st.success ("Profit Margin Anda adalah {}".format(hasilProfit))
-                st.info("Dari setiap 1 Rupiah penjualan kotor Anda. Anda mendapatkan keuntungan sebesar {}".format(hasilProfit) + 
-                " Buah. Dengan kata lain, jika Anda berhasil mendapat total penjualan kotor sebesar Rp. 100.000, keuntungan anda adalah Rp. {}.".format(hasilProfit*100000) + 
+                st.info("Dari setiap 1 Rupiah penjualan kotor Anda. Anda mendapatkan keuntungan sebesar {:n}".format(hasilProfit) + 
+                " Buah. Dengan kata lain, jika Anda berhasil mendapat total penjualan kotor sebesar Rp. 100.000, keuntungan anda adalah Rp. {:n}.".format(hasilProfit*100000) + 
                 " Rupiah. Jika Anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan Anda atau menurunkan biaya usaha Anda.")
             except ZeroDivisionError :
                 st.error ('Sorry, ada yang salah dalam sistem')
