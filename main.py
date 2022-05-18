@@ -41,8 +41,8 @@ if option == 'Home' or option == '': #Halaman Utama
         if st.button('Hitung Profit Margin') : #
             try:
                 hasilProfit = (pk-bu)/pk
-                st.success ("Profit Margin Anda adalah "+id_fmt(hasilProfit))
-                st.info("Dari setiap 1 rupiah penjualan kotor Anda, anda mendapatkan keuntungan sebesar"+id_fmt(hasilProfit) + 
+                st.success ("Profit Margin Anda adalah "+id_fmt(hasilProfit*100)+"%")
+                st.info("Dari setiap 1 rupiah penjualan kotor Anda, anda mendapatkan keuntungan sebesar "+id_fmt(hasilProfit) + 
                 " rupiah. Dengan kata lain, jika Anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah Rp"+id_fmt(hasilProfit*100000)+ 
                 ". Jika Anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan Anda atau menurunkan biaya usaha Anda.")
             except ZeroDivisionError :
@@ -154,10 +154,10 @@ elif option == 'profitMargin' : #Profit Margin
     if st.button('Hitung Profit Margin') : #
         try:
             hasilProfit = (pk-bu)/pk
-            st.success ("Profit Margin Anda adalah {}.".format(hasilProfit))
-            st.info("Dari setiap 1 Rupiah penjualan kotor Anda. Anda mendapatkan keuntungan sebesar {}".format(hasilProfit) + 
-            " Buah. Dengan kata lain, jika Anda berhasil mendapat total penjualan kotor sebesar Rp. 100.000, keuntungan anda adalah Rp. {}.".format(hasilProfit*100000) + 
-            " Rupiah. Jika Anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan Anda atau menurunkan biaya usaha Anda.")
+            st.success ("Profit Margin Anda adalah "+id_fmt(hasilProfit*100)+"%")
+            st.info("Dari setiap 1 rupiah penjualan kotor Anda, anda mendapatkan keuntungan sebesar "+id_fmt(hasilProfit) + 
+                " rupiah. Dengan kata lain, jika Anda berhasil mendapat total penjualan kotor sebesar Rp100.000, keuntungan anda adalah Rp"+id_fmt(hasilProfit*100000)+ 
+                ". Jika Anda merasa keuntungannya terlalu sedikit, anda harus meningkatkan penjualan Anda atau menurunkan biaya usaha Anda.")
         except ZeroDivisionError :
             st.error ('Sorry, ada yang salah dalam sistem')
 
