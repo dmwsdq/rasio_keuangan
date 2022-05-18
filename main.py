@@ -13,13 +13,13 @@ def int_fmt(val):
     char_to_replace = {',': '.','.': ','}
     return string_temp.translate(str.maketrans(char_to_replace))
 
-st.title("Aplikasi Ratio Keuangan")
+st.title("Aplikasi Rasio Keuangan")
 option = st.sidebar.selectbox ('Silahkan di pilih :',['Home', 'profitMargin', 'breakEven','salesGrowth', 'burnRate'])
 
 if option == 'Home' or option == '': #Halaman Utama
     st.subheader ("Home")
     st.write('''
-        Setiap Wirausahawan perlu mengetahui Rasio keuangan yang bisa membantu mereka dalam mengelola bisnis.
+        Setiap Wirausahawan perlu mengetahui Rasio Keuangan yang bisa membantu mereka dalam mengelola bisnis.
         Aplikasi ini akan membantu anda menghitung dan menjelaskan rasio keuangan berikut untuk mengelola bisnis Anda agar semakin maju.
     ''')
     status = st.radio ("Apa yang ingin Anda Ketahui : ",('Burn_Rate','Sales_Growth', 'Profit_Margin', 'Break_Even'))
@@ -101,10 +101,10 @@ if option == 'Home' or option == '': #Halaman Utama
         if st.button('Hitung Sales Growth') : #
             try:
                 hasilSales = ((ppi-pps)*100)/pps
-                st.success ("Sales Growth Anda adalah {:.2f}".format(hasilSales) + "%")
-                st.info("Pertumbuhan Penjualan Anda adalah {:.2f}".format(hasilSales) + "%." 
-                " Dengan kata lain, penjualan Anda Naik {:.2f}".format(hasilSales) + "%." + "dari periode sebelumnya." +
-                " Jika Anda merasa pertumbuhannya terlalu kecil, Anda Harus meningkatkan Penjualan Anda." )
+                st.success ("Sales Growth Anda adalah "+id_fmt(hasilSales) + "%")
+                st.info("Pertumbuhan Penjualan Anda adalah "+id_fmt(hasilSales) + "%." 
+                " Dengan kata lain, penjualan Anda naik "+id_fmt(hasilSales) + "%" + " dari periode sebelumnya." +
+                " Jika Anda merasa pertumbuhannya terlalu kecil, Anda harus meningkatkan penjualan Anda." )
             except ZeroDivisionError :
                 st.error ('Sorry, ada yang salah dalam sistem')
     else :
@@ -129,10 +129,10 @@ if option == 'Home' or option == '': #Halaman Utama
         if st.button('Hitung Burn Rate') : #
             try:
                 hasilBurn = (uwt-uat)/12
-                st.success ("Burn Rate Anda adalah {:.2f}".format(hasilBurn) + "/bulan")
-                st.info("Tingkat Pembakaran Anda adalah Rp {:.2f}".format(hasilBurn) + "/bulan" +
-                "Dengan kata lain, tiap bulan Anda menghabiskan Uang untuk usaha Anda sebanyak Rp {:.2f}".format(hasilBurn) + 
-                "Jika Anda merasa tingkat pembakarannya terlalu besar, Anda harus menekan Biaya Usaha Anda.")
+                st.success ("Burn Rate Anda adalah Rp"+id_fmt(hasilBurn) + "/bulan")
+                st.info("Tingkat Pembakaran Anda adalah Rp"+id_fmt(hasilBurn) + "/bulan." +
+                "Dengan kata lain, tiap bulan Anda menghabiskan Uang untuk usaha Anda sebanyak Rp"+id_fmt(hasilBurn) +  
+                ". Jika Anda merasa tingkat pembakarannya terlalu besar, Anda harus menekan Biaya Usaha Anda.")
             except ZeroDivisionError :
                 st.error ('Sorry, ada yang salah dalam sistem')
 
@@ -189,7 +189,7 @@ elif option == 'breakEven': #Break Even
         try:
             hasilBreak = int(math.ceil( tb / hb))
             st.success ("Break Even Anda adalah "+int_fmt(hasilBreak))
-            st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah "+int_fmt(hasilBreak)+" buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung")
+            st.info("Jumlah Barang yang harus anda jual tiap hari sebelum anda bisa untung adalah "+int_fmt(hasilBreak)+" buah. Jika Anda Sulit mencapai jumlah itu, anda harus menaikkan harga barang atau menurunkan biaya usaha supaya bisa untung.")
         except ZeroDivisionError :
             st.error ('Sorry, ada yang salah dalam sistem') 
 
@@ -216,10 +216,10 @@ elif option == 'salesGrowth' : #Sales Growth
     if st.button('Hitung Sales Growth') : #
         try:
             hasilSales = ((ppi-pps)*100)/pps
-            st.success ("Sales Growth Anda adalah {:.2f}".format(hasilSales) + "%")
-            st.info("Pertumbuhan Penjualan Anda adalah {:.2f}".format(hasilSales) + "%." 
-            " Dengan kata lain, penjualan Anda Naik {:.2f}".format(hasilSales) + "%." + "dari periode sebelumnya." +
-            " Jika Anda merasa pertumbuhannya terlalu kecil, Anda Harus meningkatkan Penjualan Anda." )
+            st.success ("Sales Growth Anda adalah "+id_fmt(hasilSales) + "%")
+            st.info("Pertumbuhan Penjualan Anda adalah "+id_fmt(hasilSales) + "%." 
+                " Dengan kata lain, penjualan Anda naik "+id_fmt(hasilSales) + "%" + " dari periode sebelumnya." +
+                " Jika Anda merasa pertumbuhannya terlalu kecil, Anda harus meningkatkan penjualan Anda." )
         except ZeroDivisionError :
             st.error ('Sorry, ada yang salah dalam sistem')
 
@@ -245,10 +245,10 @@ elif option == 'burnRate' : #Burn Rate
     if st.button('Hitung Burn Rate') : #
         try:
             hasilBurn = (uwt-uat)/12
-            st.success ("Burn Rate Anda adalah {:.2f}".format(hasilBurn) + "/bulan")
-            st.info("Tingkat Pembakaran Anda adalah Rp {:.2f}".format(hasilBurn) + "/bulan" +
-            "Dengan kata lain, tiap bulan Anda menghabiskan Uang untuk usaha Anda sebanyak Rp {:.2f}".format(hasilBurn) + 
-            "Jika Anda merasa tingkat pembakarannya terlalu besar, Anda harus menekan Biaya Usaha Anda.")
+            st.success ("Burn Rate Anda adalah Rp"+id_fmt(hasilBurn) + "/bulan")
+            st.info("Tingkat Pembakaran Anda adalah Rp"+id_fmt(hasilBurn) + "/bulan." +
+                "Dengan kata lain, tiap bulan Anda menghabiskan Uang untuk usaha Anda sebanyak Rp"+id_fmt(hasilBurn) +  
+                ". Jika Anda merasa tingkat pembakarannya terlalu besar, Anda harus menekan Biaya Usaha Anda.")
         except ZeroDivisionError :
             st.error ('Sorry, ada yang salah dalam sistem')
 
