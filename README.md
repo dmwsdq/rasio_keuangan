@@ -14,7 +14,11 @@ Streamlit
 
 ## Creators
 @dmwsdq (https://github.com/dmwsdq) - Analyst
+
 @Danangfadilla (https://github.com/Danangfadilla) - Tester 
+
 Dhanang Kurniawan - Lead Developer
+
 Emriliza Amarulhaq - Tester & Documentation
+
 (Group 11 - Class 4 - DTS PROA Python Batch 1 Year 2022 Kementerian Komunikasi dan Informatika RI)
